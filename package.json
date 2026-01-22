@@ -40,8 +40,8 @@
     "typescript": "~5.3.3"
   },
   "dependencies": {
-    "vitest": "^4.0.15",
-    "tsdown": "^0.16.7"
+    "tsdown": "^0.16.7",
+    "vitest": "^4.0.15"
   },
   "engines": {
     "node": ">= 18"
@@ -57,7 +57,11 @@
       "@2060.io/ffi-napi",
       "@2060.io/ref-napi",
       "@openwallet-foundation/askar-nodejs"
-    ]
+    ],
+    "patchedDependencies": {
+      "@credo-ts/askar@0.6.1": "patches/@credo-ts__askar@0.6.1.patch",
+      "@credo-ts/core@0.6.1": "patches/@credo-ts__core@0.6.1.patch"
+    }
   },
   "resolutions": {
     "@2060.io/ffi-napi": "4.0.9",

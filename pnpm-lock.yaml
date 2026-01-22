@@ -10,6 +10,14 @@ overrides:
   '@types/node': ^18.0.0
   vite: npm:rolldown-vite@7.2.8
 
+patchedDependencies:
+  '@credo-ts/askar@0.6.1':
+    hash: afaa4daa371ad65b8976cf904e1d8711f07a2dbb6af199883372e8181f33d394
+    path: patches/@credo-ts__askar@0.6.1.patch
+  '@credo-ts/core@0.6.1':
+    hash: 0b31ee68366406990f76850b84cdadb7d2f992b09bd094f58781048dd8d92c7e
+    path: patches/@credo-ts__core@0.6.1.patch
+
 importers:
 
   .:
@@ -84,10 +92,10 @@ importers:
     devDependencies:
       '@credo-ts/askar':
         specifier: ^0.6.1
-        version: 0.6.1(@openwallet-foundation/askar-shared@0.4.3)(typescript@5.9.3)
+        version: 0.6.1(patch_hash=afaa4daa371ad65b8976cf904e1d8711f07a2dbb6af199883372e8181f33d394)(@openwallet-foundation/askar-shared@0.4.3)(typescript@5.9.3)
       '@credo-ts/core':
         specifier: ^0.6.1
-        version: 0.6.1(typescript@5.9.3)
+        version: 0.6.1(patch_hash=0b31ee68366406990f76850b84cdadb7d2f992b09bd094f58781048dd8d92c7e)(typescript@5.9.3)
       '@credo-ts/didcomm':
         specifier: ^0.6.1
         version: 0.6.1(typescript@5.9.3)
@@ -117,7 +125,7 @@ importers:
     dependencies:
       '@credo-ts/core':
         specifier: ^0.6.1
-        version: 0.6.1(typescript@5.9.3)
+        version: 0.6.1(patch_hash=0b31ee68366406990f76850b84cdadb7d2f992b09bd094f58781048dd8d92c7e)(typescript@5.9.3)
       '@credo-ts/didcomm':
         specifier: ^0.6.1
         version: 0.6.1(typescript@5.9.3)
@@ -142,7 +150,7 @@ importers:
     devDependencies:
       '@credo-ts/askar':
         specifier: ^0.6.1
-        version: 0.6.1(@openwallet-foundation/askar-shared@0.4.3)(typescript@5.9.3)
+        version: 0.6.1(patch_hash=afaa4daa371ad65b8976cf904e1d8711f07a2dbb6af199883372e8181f33d394)(@openwallet-foundation/askar-shared@0.4.3)(typescript@5.9.3)
       '@credo-ts/node':
         specifier: ^0.6.1
         version: 0.6.1(typescript@5.9.3)
@@ -178,10 +186,10 @@ importers:
     dependencies:
       '@credo-ts/didcomm':
         specifier: ^0.6.1
-        version: 0.6.1(typescript@5.3.3)
+        version: 0.6.1(typescript@5.9.3)
       '@li0ard/tsemrtd':
         specifier: ^0.3.4
-        version: 0.3.4(typescript@5.3.3)
+        version: 0.3.4(typescript@5.9.3)
       '@peculiar/asn1-x509':
         specifier: ^2.6.0
         version: 2.6.0
@@ -221,13 +229,13 @@ importers:
     devDependencies:
       '@credo-ts/askar':
         specifier: ^0.6.1
-        version: 0.6.1(@openwallet-foundation/askar-shared@0.4.3)(typescript@5.3.3)
+        version: 0.6.1(patch_hash=afaa4daa371ad65b8976cf904e1d8711f07a2dbb6af199883372e8181f33d394)(@openwallet-foundation/askar-shared@0.4.3)(typescript@5.9.3)
       '@credo-ts/core':
         specifier: ^0.6.1
-        version: 0.6.1(typescript@5.3.3)
+        version: 0.6.1(patch_hash=0b31ee68366406990f76850b84cdadb7d2f992b09bd094f58781048dd8d92c7e)(typescript@5.9.3)
       '@credo-ts/node':
         specifier: ^0.6.1
-        version: 0.6.1(typescript@5.3.3)
+        version: 0.6.1(typescript@5.9.3)
       '@openwallet-foundation/askar-nodejs':
         specifier: ^0.4.3
         version: 0.4.3
@@ -236,13 +244,13 @@ importers:
         version: 0.4.3
       ts-node-dev:
         specifier: ^1.1.8
-        version: 1.1.8(typescript@5.3.3)
+        version: 1.1.8(typescript@5.9.3)
 
   packages/reactions:
     dependencies:
       '@credo-ts/core':
         specifier: ^0.6.1
-        version: 0.6.1(typescript@5.3.3)
+        version: 0.6.1(patch_hash=0b31ee68366406990f76850b84cdadb7d2f992b09bd094f58781048dd8d92c7e)(typescript@5.3.3)
       '@credo-ts/didcomm':
         specifier: ^0.6.1
         version: 0.6.1(typescript@5.3.3)
@@ -264,7 +272,7 @@ importers:
     devDependencies:
       '@credo-ts/askar':
         specifier: ^0.6.1
-        version: 0.6.1(@openwallet-foundation/askar-shared@0.4.3)(typescript@5.3.3)
+        version: 0.6.1(patch_hash=afaa4daa371ad65b8976cf904e1d8711f07a2dbb6af199883372e8181f33d394)(@openwallet-foundation/askar-shared@0.4.3)(typescript@5.3.3)
       '@credo-ts/node':
         specifier: ^0.6.1
         version: 0.6.1(typescript@5.3.3)
@@ -285,7 +293,7 @@ importers:
     dependencies:
       '@credo-ts/core':
         specifier: ^0.6.1
-        version: 0.6.1(typescript@5.3.3)
+        version: 0.6.1(patch_hash=0b31ee68366406990f76850b84cdadb7d2f992b09bd094f58781048dd8d92c7e)(typescript@5.3.3)
       '@credo-ts/didcomm':
         specifier: ^0.6.1
         version: 0.6.1(typescript@5.3.3)
@@ -310,7 +318,7 @@ importers:
     devDependencies:
       '@credo-ts/askar':
         specifier: ^0.6.1
-        version: 0.6.1(@openwallet-foundation/askar-shared@0.4.3)(typescript@5.3.3)
+        version: 0.6.1(patch_hash=afaa4daa371ad65b8976cf904e1d8711f07a2dbb6af199883372e8181f33d394)(@openwallet-foundation/askar-shared@0.4.3)(typescript@5.3.3)
       '@credo-ts/node':
         specifier: ^0.6.1
         version: 0.6.1(typescript@5.3.3)
@@ -331,7 +339,7 @@ importers:
     dependencies:
       '@credo-ts/core':
         specifier: ^0.6.1
-        version: 0.6.1(typescript@5.9.3)
+        version: 0.6.1(patch_hash=0b31ee68366406990f76850b84cdadb7d2f992b09bd094f58781048dd8d92c7e)(typescript@5.9.3)
       '@credo-ts/didcomm':
         specifier: ^0.6.1
         version: 0.6.1(typescript@5.9.3)
@@ -350,7 +358,7 @@ importers:
     devDependencies:
       '@credo-ts/askar':
         specifier: ^0.6.1
-        version: 0.6.1(@openwallet-foundation/askar-shared@0.4.3)(typescript@5.9.3)
+        version: 0.6.1(patch_hash=afaa4daa371ad65b8976cf904e1d8711f07a2dbb6af199883372e8181f33d394)(@openwallet-foundation/askar-shared@0.4.3)(typescript@5.9.3)
       '@credo-ts/node':
         specifier: ^0.6.1
         version: 0.6.1(typescript@5.9.3)
@@ -387,16 +395,16 @@ importers:
     devDependencies:
       '@credo-ts/askar':
         specifier: ^0.6.1
-        version: 0.6.1(@openwallet-foundation/askar-shared@0.4.3)(typescript@5.3.3)
+        version: 0.6.1(patch_hash=afaa4daa371ad65b8976cf904e1d8711f07a2dbb6af199883372e8181f33d394)(@openwallet-foundation/askar-shared@0.4.3)(typescript@5.9.3)
       '@credo-ts/core':
         specifier: ^0.6.1
-        version: 0.6.1(typescript@5.3.3)
+        version: 0.6.1(patch_hash=0b31ee68366406990f76850b84cdadb7d2f992b09bd094f58781048dd8d92c7e)(typescript@5.9.3)
       '@credo-ts/didcomm':
         specifier: ^0.6.1
-        version: 0.6.1(typescript@5.3.3)
+        version: 0.6.1(typescript@5.9.3)
       '@credo-ts/node':
         specifier: ^0.6.1
-        version: 0.6.1(typescript@5.3.3)
+        version: 0.6.1(typescript@5.9.3)
       '@openwallet-foundation/askar-nodejs':
         specifier: ^0.4.3
         version: 0.4.3
@@ -405,7 +413,7 @@ importers:
         version: 0.4.3
       ts-node-dev:
         specifier: ^1.1.8
-        version: 1.1.8(typescript@5.3.3)
+        version: 1.1.8(typescript@5.9.3)
 
 packages:
 
@@ -1074,6 +1082,7 @@ packages:
 
   '@sphereon/kmp-mdoc-core@0.2.0-SNAPSHOT.26':
     resolution: {integrity: sha512-QXJ6R8ENiZV2rPMbn06cw5JKwqUYN1kzVRbYfONqE1PEXx1noQ4md7uxr2zSczi0ubKkNcbyYDNtIMTZIhGzmQ==}
+    bundledDependencies: []
 
   '@sphereon/pex-models@2.3.2':
     resolution: {integrity: sha512-foFxfLkRwcn/MOp/eht46Q7wsvpQGlO7aowowIIb5Tz9u97kYZ2kz6K2h2ODxWuv5CRA7Q0MY8XUBGE2lfOhOQ==}
@@ -3672,9 +3681,9 @@ snapshots:
 
   '@bcoe/v8-coverage@1.0.2': {}
 
-  '@credo-ts/askar@0.6.1(@openwallet-foundation/askar-shared@0.4.3)(typescript@5.3.3)':
+  '@credo-ts/askar@0.6.1(patch_hash=afaa4daa371ad65b8976cf904e1d8711f07a2dbb6af199883372e8181f33d394)(@openwallet-foundation/askar-shared@0.4.3)(typescript@5.3.3)':
     dependencies:
-      '@credo-ts/core': 0.6.1(typescript@5.3.3)
+      '@credo-ts/core': 0.6.1(patch_hash=0b31ee68366406990f76850b84cdadb7d2f992b09bd094f58781048dd8d92c7e)(typescript@5.3.3)
       '@openwallet-foundation/askar-shared': 0.4.3
       class-transformer: 0.5.1
       class-validator: 0.14.1
@@ -3685,9 +3694,9 @@ snapshots:
       - supports-color
       - typescript
 
-  '@credo-ts/askar@0.6.1(@openwallet-foundation/askar-shared@0.4.3)(typescript@5.9.3)':
+  '@credo-ts/askar@0.6.1(patch_hash=afaa4daa371ad65b8976cf904e1d8711f07a2dbb6af199883372e8181f33d394)(@openwallet-foundation/askar-shared@0.4.3)(typescript@5.9.3)':
     dependencies:
-      '@credo-ts/core': 0.6.1(typescript@5.9.3)
+      '@credo-ts/core': 0.6.1(patch_hash=0b31ee68366406990f76850b84cdadb7d2f992b09bd094f58781048dd8d92c7e)(typescript@5.9.3)
       '@openwallet-foundation/askar-shared': 0.4.3
       class-transformer: 0.5.1
       class-validator: 0.14.1
@@ -3698,7 +3707,7 @@ snapshots:
       - supports-color
       - typescript
 
-  '@credo-ts/core@0.6.1(typescript@5.3.3)':
+  '@credo-ts/core@0.6.1(patch_hash=0b31ee68366406990f76850b84cdadb7d2f992b09bd094f58781048dd8d92c7e)(typescript@5.3.3)':
     dependencies:
       '@animo-id/mdoc': 0.5.2
       '@animo-id/pex': 6.1.1
@@ -3747,7 +3756,7 @@ snapshots:
       - supports-color
       - typescript
 
-  '@credo-ts/core@0.6.1(typescript@5.9.3)':
+  '@credo-ts/core@0.6.1(patch_hash=0b31ee68366406990f76850b84cdadb7d2f992b09bd094f58781048dd8d92c7e)(typescript@5.9.3)':
     dependencies:
       '@animo-id/mdoc': 0.5.2
       '@animo-id/pex': 6.1.1
@@ -3798,7 +3807,7 @@ snapshots:
 
   '@credo-ts/didcomm@0.6.1(typescript@5.3.3)':
     dependencies:
-      '@credo-ts/core': 0.6.1(typescript@5.3.3)
+      '@credo-ts/core': 0.6.1(patch_hash=0b31ee68366406990f76850b84cdadb7d2f992b09bd094f58781048dd8d92c7e)(typescript@5.3.3)
       class-transformer: 0.5.1
       class-validator: 0.14.1
       luxon: 3.7.2
@@ -3811,7 +3820,7 @@ snapshots:
 
   '@credo-ts/didcomm@0.6.1(typescript@5.9.3)':
     dependencies:
-      '@credo-ts/core': 0.6.1(typescript@5.9.3)
+      '@credo-ts/core': 0.6.1(patch_hash=0b31ee68366406990f76850b84cdadb7d2f992b09bd094f58781048dd8d92c7e)(typescript@5.9.3)
       class-transformer: 0.5.1
       class-validator: 0.14.1
       luxon: 3.7.2
@@ -3824,7 +3833,7 @@ snapshots:
 
   '@credo-ts/node@0.6.1(typescript@5.3.3)':
     dependencies:
-      '@credo-ts/core': 0.6.1(typescript@5.3.3)
+      '@credo-ts/core': 0.6.1(patch_hash=0b31ee68366406990f76850b84cdadb7d2f992b09bd094f58781048dd8d92c7e)(typescript@5.3.3)
       '@credo-ts/didcomm': 0.6.1(typescript@5.3.3)
       '@types/express': 5.0.6
       express: 5.2.1
@@ -3839,7 +3848,7 @@ snapshots:
 
   '@credo-ts/node@0.6.1(typescript@5.9.3)':
     dependencies:
-      '@credo-ts/core': 0.6.1(typescript@5.9.3)
+      '@credo-ts/core': 0.6.1(patch_hash=0b31ee68366406990f76850b84cdadb7d2f992b09bd094f58781048dd8d92c7e)(typescript@5.9.3)
       '@credo-ts/didcomm': 0.6.1(typescript@5.9.3)
       '@types/express': 5.0.6
       express: 5.2.1
@@ -4070,17 +4079,17 @@ snapshots:
     dependencies:
       '@js-joda/core': 5.6.3
 
-  '@li0ard/tinytlv@0.1.1(typescript@5.3.3)':
+  '@li0ard/tinytlv@0.1.1(typescript@5.9.3)':
     dependencies:
-      typescript: 5.3.3
+      typescript: 5.9.3
 
-  '@li0ard/tsemrtd@0.3.4(typescript@5.3.3)':
+  '@li0ard/tsemrtd@0.3.4(typescript@5.9.3)':
     dependencies:
-      '@li0ard/tinytlv': 0.1.1(typescript@5.3.3)
+      '@li0ard/tinytlv': 0.1.1(typescript@5.9.3)
       '@peculiar/asn1-cms': 2.6.0
       '@peculiar/asn1-schema': 2.6.0
       '@peculiar/asn1-x509': 2.6.0
-      typescript: 5.3.3
+      typescript: 5.9.3
 
   '@mapbox/node-pre-gyp@1.0.11':
     dependencies:
@@ -6817,7 +6826,7 @@ snapshots:
     dependencies:
       typescript: 5.3.3
 
-  ts-node-dev@1.1.8(typescript@5.3.3):
+  ts-node-dev@1.1.8(typescript@5.9.3):
     dependencies:
       chokidar: 3.6.0
       dynamic-dedupe: 0.3.0
@@ -6827,9 +6836,9 @@ snapshots:
       rimraf: 2.7.1
       source-map-support: 0.5.21
       tree-kill: 1.2.2
-      ts-node: 9.1.1(typescript@5.3.3)
+      ts-node: 9.1.1(typescript@5.9.3)
       tsconfig: 7.0.0
-      typescript: 5.3.3
+      typescript: 5.9.3
 
   ts-node-dev@2.0.0(@types/node@18.19.130)(typescript@5.9.3):
     dependencies:
@@ -6885,14 +6894,14 @@ snapshots:
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
 
-  ts-node@9.1.1(typescript@5.3.3):
+  ts-node@9.1.1(typescript@5.9.3):
     dependencies:
       arg: 4.1.3
       create-require: 1.1.1
       diff: 4.0.2
       make-error: 1.3.6
       source-map-support: 0.5.21
-      typescript: 5.3.3
+      typescript: 5.9.3
       yn: 3.1.1
 
   tsconfig-paths@3.15.0:
