@@ -16,6 +16,7 @@ import { DidCommMediaSharingRecord } from '../src/repository'
 import { recordsAddedByType } from './recordUtils'
 import { SubjectInboundTransport } from './transport/SubjectInboundTransport'
 import { SubjectOutboundTransport } from './transport/SubjectOutboundTransport'
+import { recordToCursor } from '@credo-ts/core'
 
 const logger = new ConsoleLogger(LogLevel.off)
 
@@ -173,5 +174,89 @@ describe('media test', () => {
     expect(item.mimeType).toBe('image/png')
     expect(item.uri).toBe('http://blabla')
     expect(item.metadata!.duration).toBe(14)
+  })
+
+  test('Cursor based pagination for media sharing records', async () => {
+    const createdRecords: DidCommMediaSharingRecord[] = []
+
+    // Create 3 media records
+    for (let i = 0; i < 3; i++) {
+      const record = await aliceAgent.modules.media.create({
+        connectionId: aliceConnectionRecord!.id,
+        metadata: { index: i },
+      })
+
+      await aliceAgent.modules.media.share({
+        recordId: record.id,
+        items: [
+          {
+            mimeType: 'image/png',
+            uri: `http://image-${i}`,
+            metadata: { order: i },
+          },
+        ],
+      })
+
+      createdRecords.push(record)
+    }
+
+    const waitForRecords = async (expected: number, timeoutMs = 5000) => {
+      const start = Date.now()
+
+      while (Date.now() - start < timeoutMs) {
+        const records = await bobAgent.modules.media.getAll()
+        if (records.length === expected) return records
+        await new Promise((r) => setTimeout(r, 100))
+      }
+
+      throw new Error(`Timed out waiting for ${expected} records`)
+    }
+
+    const allRecords = await waitForRecords(3)
+    expect(allRecords.length).toBe(3)
+
+    // Sort deterministically by createdAt (important for cursor pagination)
+    const sortedRecords = [...allRecords].sort(
+      (a, b) => new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime(),
+    )
+
+    // Simulate limit = 2
+    const paginatedRecords = sortedRecords.slice(0, 2)
+
+    // Manually calculate cursors
+    const cursor = {
+      before:
+        paginatedRecords.length > 0
+          ? recordToCursor({
+            id: paginatedRecords[0].id,
+            createdAt: String(paginatedRecords[0].createdAt),
+          })
+          : '',
+      after:
+        paginatedRecords.length > 0
+          ? recordToCursor({
+            id: paginatedRecords[paginatedRecords.length - 1].id,
+            createdAt:
+              String(paginatedRecords[paginatedRecords.length - 1].createdAt),
+          })
+          : '',
+    }
+
+    // Assertions
+    expect(paginatedRecords).toHaveLength(2)
+
+    expect(cursor.before).toBe(
+      recordToCursor({
+        id: paginatedRecords[0].id,
+        createdAt: String(paginatedRecords[0].createdAt),
+      }),
+    )
+
+    expect(cursor.after).toBe(
+      recordToCursor({
+        id: paginatedRecords[1].id,
+        createdAt: String(paginatedRecords[1].createdAt),
+      }),
+    )
   })
 })

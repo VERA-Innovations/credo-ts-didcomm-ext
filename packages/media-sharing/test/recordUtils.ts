@@ -6,7 +6,7 @@ import type {
   Agent,
   BaseEvent,
 } from '@credo-ts/core'
-import type { Constructor } from '@credo-ts/core/build/utils/mixins'
+import type { Constructor } from '@credo-ts/core'
 
 import { RepositoryEventTypes } from '@credo-ts/core'
 import { map, filter, pipe } from 'rxjs'
